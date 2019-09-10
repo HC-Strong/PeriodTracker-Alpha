@@ -8,4 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="CalendarTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:dateTextAppearance">@style/CalendarText</item>
+    </style>
+
+    <style name="CalendarText" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
 </resources>
