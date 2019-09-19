@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PeriodTracker</string>
+    <string name="title_activity_ex_basic">exBasicActivity</string>
 </resources>

@@ -18,4 +18,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/goToExample"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goToExample"
+        android:text="Go To Example"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="512dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

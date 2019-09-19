@@ -1,8 +1,10 @@
 package com.example.periodtracker.controller
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import com.example.periodtracker.R
 import com.example.periodtracker.classes.Cycle
 import com.example.periodtracker.classes.P0
@@ -25,8 +27,13 @@ class TestingActivity : AppCompatActivity() {
         Log.d("TAG","cycle started on ${testCycle.start.dayOfMonth}")
         Log.d("TAG", "cycle ended on ${testCycle.end}")
 
-        startDate.dayOfMonth = 11 // did this change it?
+        startDate.dayOfMonth = 11
 
         Log.d("TAG","NOW, cycle started on ${testCycle.start.dayOfMonth}")
+    }
+
+    fun goToExample(view: View){
+        var exampleIntent = Intent(this, exBasicActivity::class.java)
+        startActivity(exampleIntent)
     }
 }

@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".controller.TestingActivity"></activity>
+        <activity
+            android:name=".controller.exBasicActivity"
+            android:label="@string/title_activity_ex_basic"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".controller.TestingActivity" />
         <activity android:name=".controller.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
