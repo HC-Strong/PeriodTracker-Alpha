@@ -1,0 +1,27 @@
+These are just my notes on development. Probably somewhere better to put them, but oh well
+
+record classes
+Gonna need:
+
+Cycle: which stores start and end dates and an array of the dates in that range stored as:
+DailyInfo: items for array containing all info for each date. nullable in case user submits not date
+            val LocalDate, vars for period info, symptom info
+PeriodInfo and SymptomInfo should inherit from something probably. call it Info
+
+Also cycle needs methods for CalcEstPeriodStart and CalcEstFertility or something
+
+And I'll need a variable to store the current cycle object
+
+
+
+THINGS TO FIX LATER
+
+**** I was gonna add a class for PeriodInfo and SymptomInfo to inherit from and probably should
+But the name I was gonna use (Info) implies it's a parent to DailyInfo as well as period and symptom info.
+Which it wouldn't be. Also not totally sure how to make that work and I'm not using symptoms yet
+Later
+
+
+
+****I'm going to start with making start and end dates of a cycle immutable so I can use LocalDate
+But that's not a good idea in the long run. I'll fix it later

@@ -1,4 +1,4 @@
-package com.example.periodtracker.classes
+package com.example.periodtracker.model
 
 // first day of period or last day of prev cycle
 // making this basically a mutable version of LocalDate which is immutable

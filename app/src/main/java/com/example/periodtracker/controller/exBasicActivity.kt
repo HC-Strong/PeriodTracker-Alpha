@@ -14,7 +14,7 @@ class exBasicActivity : AppCompatActivity() {
         setContentView(R.layout.activity_ex_basic)
         setSupportActionBar(toolbar)
 
-        fab.setOnClickListener { view ->
+        mainAddPeriodFAB.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
