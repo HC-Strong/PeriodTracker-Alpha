@@ -23,8 +23,23 @@
         android:id="@+id/goToExample"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="268dp"
         android:onClick="goToExample"
         android:text="Go To Example"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="512dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarTest" />
+
+    <SeekBar
+        android:id="@+id/seekBarTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/rectangles"
+        android:thumb="@drawable/baseline_add_white_18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
