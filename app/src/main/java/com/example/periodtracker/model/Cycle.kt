@@ -6,10 +6,10 @@ import java.time.LocalDate
 
 // this is to store all the data about each cycle as a whole
 
-class Cycle (val start: LocalDate, val end: LocalDate? = null){
+class Cycle (val start: LocalDate, var end: LocalDate? = null){
 
     var dayArray = mutableListOf<DailyInfo>()
-    var debug : LocalDate? = null
+    var debug : String? = null
 
     fun EstimatePeriodStart(){
         Log.d("TAG", "period start estimate would go here")
@@ -28,9 +28,9 @@ class Cycle (val start: LocalDate, val end: LocalDate? = null){
             Log.d("TAG", "No existing cycle data to update. Creating new cycle and moving on")
         } else {
             Log.d("TAG", "Currently there are $cycleCount cycle records")
-            Log.d("TAG", "Debug is ${PeriodData.cycleRecords[cycleCount-1].debug.toString()}.")
-            PeriodData.cycleRecords[cycleCount-1].debug = start
-            Log.d("TAG", "Now it's ${PeriodData.cycleRecords[cycleCount-1].debug.toString()}. Hope that's changed.")
+            Log.d("TAG", "End of previous cycle is ${PeriodData.cycleRecords[cycleCount-1].end.toString()}.")
+            PeriodData.cycleRecords[cycleCount-1].end = start
+            Log.d("TAG", "Now it's ${PeriodData.cycleRecords[cycleCount-1].end.toString()}. Hope that's changed.")
         }
     }
 }
