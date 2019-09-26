@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
 
 
             ///////////////////////////////////////////////////
-        val newCycle = Cycle(LocalDate.of(2019, 9, 24))
+        val newCycle = Cycle(LocalDate.of(curSelectedDate.year, curSelectedDate.month+1, curSelectedDate.dayOfMonth))
 
         Log.d("TAG", PeriodData.cycleRecords.toString())
         PeriodData.cycleRecords.add(newCycle)
