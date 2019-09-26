@@ -39,13 +39,13 @@ class MainActivity : AppCompatActivity() {
 
 
     fun goToTesting(view: View){
-        Log.d("Nothing", "The view is $view")
+        Log.d("IGNORE", "Logging view to curb warnings: $view")
         val testingIntent = Intent(this, TestingActivity::class.java)
         startActivity(testingIntent)
     }
 
     fun onAddPeriodClick(view: View){
-        Log.d("Nothing", "The view is $view")
+        Log.d("IGNORE", "Logging view to curb warnings: $view")
         // When button is clicked, create new cycle starting on currently selected date
         // the selected date is stored in a
 
