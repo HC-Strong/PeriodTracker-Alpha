@@ -29,9 +29,8 @@ class MainActivity : AppCompatActivity() {
 
 
         calendarView?.setOnDateChangeListener {_, year,month,day ->
-            val dateAsString : String = "" + (month+1) + "/" + day + "/" + year
             curSelectedDate = LocalDate.of(year, month, day)
-            Toast.makeText(this,dateAsString, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,curSelectedDate.toString(), Toast.LENGTH_SHORT).show()
         }
 
 
@@ -46,8 +45,6 @@ class MainActivity : AppCompatActivity() {
 
     fun onAddPeriodClick(view: View){
         Log.d("IGNORE", "Logging view to curb warnings: $view")
-        // When button is clicked, create new cycle starting on currently selected date
-        // the selected date is stored in a
 
         Toast.makeText(this,curSelectedDate.toString(), Toast.LENGTH_SHORT).show()
 
