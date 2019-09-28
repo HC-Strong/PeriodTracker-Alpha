@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.CalendarView
 import android.widget.Toast
 import com.example.periodtracker.R
+import com.example.periodtracker.adapters.CalendarUpdate
 import com.example.periodtracker.model.Cycle
 import com.example.periodtracker.services.PeriodData
 import kotlinx.android.synthetic.main.activity_main.*
@@ -24,14 +25,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        val calendarView = findViewById<CalendarView>(R.id.mainCalendarView)
-
-
+//code for old calendar
+/*        val calendarView = findViewById<CalendarView>(R.id.mainCalendarView)
         calendarView?.setOnDateChangeListener {_, year,month,day ->
             curSelectedDate = LocalDate.of(year, month, day)
             Toast.makeText(this,curSelectedDate.toString(), Toast.LENGTH_SHORT).show()
-        }
+        }*/
+
+        CalendarUpdate().updateCalendar(this, calendar_grid, now())
 
 
     }

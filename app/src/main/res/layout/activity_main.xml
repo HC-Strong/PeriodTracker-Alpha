@@ -94,16 +94,15 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/weekdayLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/divider2">
 
         <TextView
             android:id="@+id/mon"
@@ -111,7 +110,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/mon_M"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/calendar_date_text_size" />
 
         <TextView
             android:id="@+id/tue"
@@ -119,7 +120,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/tue_T"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/calendar_date_text_size" />
 
         <TextView
             android:id="@+id/wen"
@@ -127,7 +130,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/wen_W"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/calendar_date_text_size" />
 
         <TextView
             android:id="@+id/thu"
@@ -135,7 +140,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/thu_T"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/calendar_date_text_size" />
 
         <TextView
             android:id="@+id/fri"
@@ -143,7 +150,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/fri_F"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/calendar_date_text_size" />
 
         <TextView
             android:id="@+id/sat"
@@ -151,7 +160,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/sat_S"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/calendar_date_text_size" />
 
         <TextView
             android:id="@+id/sun"
@@ -159,21 +170,25 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/sun_S"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/calendar_date_text_size" />
     </LinearLayout>
+
 
     <GridView
         android:id="@+id/calendar_grid"
         android:layout_width="0dp"
         android:layout_height="354dp"
-        android:numColumns="7"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
+        android:numColumns="7"
+        android:verticalSpacing="@dimen/calendar_date_padding_v"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+        app:layout_constraintTop_toBottomOf="@+id/weekdayLayout"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/mainGoToTesting"
@@ -190,8 +205,8 @@
         android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintTop_toBottomOf="@+id/mainCalendarView"
+        android:background="@color/colorTextPrimary"
+        app:layout_constraintTop_toBottomOf="parent"
         tools:layout_editor_absoluteX="-30dp" />
 
     <View
@@ -199,7 +214,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="8dp"
-        android:background="?android:attr/listDivider"
+        android:background="@color/colorTextPrimary"
         app:layout_constraintTop_toBottomOf="@+id/progressBar"
         tools:layout_editor_absoluteX="6dp" />
 
@@ -215,5 +230,13 @@
         app:maxImageSize="36dp"
         app:srcCompat="@drawable/baseline_invert_colors_white_18dp"
         app:useCompatPadding="false" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorTextPrimary"
+        app:layout_constraintTop_toBottomOf="@+id/weekdayLayout"
+        tools:layout_editor_absoluteX="4dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

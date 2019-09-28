@@ -6,4 +6,5 @@
     <color name="bloodRed">#C21200</color>
 
     <color name="colorTextPrimary">#FFFFFF</color>
+    <color name="colorTextFaded">#A7A7A7</color>
 </resources>
