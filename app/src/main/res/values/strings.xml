@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">PeriodTracker</string>
     <string name="title_activity_ex_basic">exBasicActivity</string>
+    <string name="mon_M">M</string>
+    <string name="tue_T">T</string>
+    <string name="wen_W">W</string>
+    <string name="thu_T">T</string>
+    <string name="fri_F">F</string>
+    <string name="sat_S">S</string>
+    <string name="sun_S">S</string>
 </resources>
