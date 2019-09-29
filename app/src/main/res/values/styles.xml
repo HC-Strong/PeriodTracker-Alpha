@@ -8,6 +8,25 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="PeriodAddDialogButtons" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="android:textSize">@dimen/small_text_size</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/PosButton</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/NegButton</item>
+    </style>
+
+    <style name="PosButton" parent="PeriodAddDialogButtons">
+        <item name="android:textColor">@color/bloodRed</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+
+    <style name="NegButton" parent="PeriodAddDialogButtons">
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+
     <style name="CalendarTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:dateTextAppearance">@style/CalendarText</item>
     </style>

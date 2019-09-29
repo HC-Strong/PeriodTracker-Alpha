@@ -9,6 +9,7 @@ import android.widget.CalendarView
 import android.widget.Toast
 import com.example.periodtracker.R
 import com.example.periodtracker.adapters.CalendarUpdate
+import com.example.periodtracker.dialogs.AddPeriodDialogFragment
 import com.example.periodtracker.model.Cycle
 import com.example.periodtracker.services.PeriodData
 import kotlinx.android.synthetic.main.activity_main.*
@@ -49,12 +50,23 @@ class MainActivity : AppCompatActivity() {
 
         Toast.makeText(this,curSelectedDate.toString(), Toast.LENGTH_SHORT).show()
 
+        logPeriodDialog(view)
 
-            ///////////////////////////////////////////////////
+        ///////////////////////////////////////////////////
+        ///create period data for that date and also create cycle if no period on prev day
+
+
         val newCycle = Cycle(LocalDate.of(curSelectedDate.year, curSelectedDate.month+1, curSelectedDate.dayOfMonth))
 
         Log.d("TAG", PeriodData.cycleRecords.toString())
         PeriodData.cycleRecords.add(newCycle)
         Log.d("TAG", PeriodData.cycleRecords.toString())
+    }
+
+    fun logPeriodDialog(view: View) {
+        Log.d("IGNORE", "Logging view to curb warnings: $view")
+
+        val newFragment = AddPeriodDialogFragment()
+        newFragment.show(supportFragmentManager, "add period")
     }
 }

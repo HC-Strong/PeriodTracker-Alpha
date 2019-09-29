@@ -1,5 +1,8 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="calendar_date_padding_v">24dp</dimen>
+    <dimen name="dialog_margins">10dp</dimen>
+    <dimen name="dialog_margins_wide">16dp</dimen>
     <dimen name="calendar_date_text_size">24sp</dimen>
+    <dimen name="small_text_size">20sp</dimen>
 </resources>

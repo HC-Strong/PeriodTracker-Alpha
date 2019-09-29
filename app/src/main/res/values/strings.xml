@@ -8,4 +8,8 @@
     <string name="fri_F">F</string>
     <string name="sat_S">S</string>
     <string name="sun_S">S</string>
+    <string name="logPeriod">Log Period</string>
+    <string name="cancel">Cancel</string>
+    <string name="record_period_for">Record Period For:</string>
+    <string name="flow">Flow:</string>
 </resources>
