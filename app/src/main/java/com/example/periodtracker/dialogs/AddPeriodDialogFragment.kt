@@ -6,6 +6,7 @@ import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.example.periodtracker.R
 import com.example.periodtracker.utilities.BUNDLE_DIALOG
@@ -15,6 +16,8 @@ import java.time.LocalDate
 
 class AddPeriodDialogFragment : DialogFragment() {
 
+    private var selectedDate = LocalDate.now()
+
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
             val builder = AlertDialog.Builder(it, R.style.PeriodAddDialogButtons)
@@ -22,7 +25,7 @@ class AddPeriodDialogFragment : DialogFragment() {
             val inflater = requireActivity().layoutInflater
 
             val selectedDateStr = arguments!!.getString(BUNDLE_DIALOG)
-            val selectedDate = LocalDate.parse(selectedDateStr)
+            selectedDate = LocalDate.parse(selectedDateStr)
 
             Log.d("TAG", "The selected date is $selectedDate")
 
@@ -30,7 +33,7 @@ class AddPeriodDialogFragment : DialogFragment() {
 
             // Inflate and set the layout for the dialog
             // Pass null as the parent view because its going in the dialog layout
-            // (using an extra var for content to be used to set text below)
+            // (using an extra var for content to be used to set text and onclicklisteners below!!!!!)
             val content = inflater.inflate(R.layout.add_period_dialog, null)
             builder.setView(content)
                 // Add action buttons
@@ -41,17 +44,21 @@ class AddPeriodDialogFragment : DialogFragment() {
 
             // Set text for popup to currently selected date
             content.period_date_text.text = "${selectedDate.month.toString()}  ${selectedDate.dayOfMonth.toString()}"
-            builder.create()
+
+            content.prevBtn.setOnClickListener { view -> prevDay(view, content.period_date_text) }
+
+
+                builder.create()
         } ?: throw IllegalStateException("Activity cannot be null")
 
     }
 
-    fun prevDay(view: View) {
+    private fun prevDay(view: View, dateText: TextView) {
         Log.d("IGNORE", "Logging view to curb warnings: $view")
 
-    }
-
-    fun setTheText(newText: String) {
-        period_date_text.text = newText
+        val oldDate = selectedDate
+        val newDate = oldDate.minusDays(1)
+        dateText.text = "${newDate.month.toString()}  ${newDate.dayOfMonth.toString()}"
+        Log.d("TAG", "success in the prevDay clicking department!")
     }
 }
