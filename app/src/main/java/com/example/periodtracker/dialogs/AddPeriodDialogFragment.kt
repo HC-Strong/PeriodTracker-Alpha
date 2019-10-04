@@ -34,14 +34,10 @@ class AddPeriodDialogFragment : DialogFragment() {
             val content = inflater.inflate(R.layout.add_period_dialog, null)
             builder.setView(content)
                 // Add action buttons
-                .setPositiveButton(R.string.logPeriod,
-                    DialogInterface.OnClickListener { dialog, id ->
-                        // log period for user ...
-                    })
-                .setNegativeButton(R.string.cancel,
-                    DialogInterface.OnClickListener { dialog, id ->
-                        getDialog()!!.cancel()
-                    })
+                .setPositiveButton(R.string.logPeriod) { dialog, id ->
+                    // log period for user ...
+                    }
+                .setNegativeButton(R.string.cancel) { _, _ -> dialog!!.cancel() }
 
             // Set text for popup to currently selected date
             content.period_date_text.text = "${selectedDate.month.toString()}  ${selectedDate.dayOfMonth.toString()}"
