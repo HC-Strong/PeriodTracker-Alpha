@@ -48,16 +48,30 @@
             android:layout_weight="1"
             android:background="@drawable/baseline_arrow_left_white_18dp" />
 
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="September 29\nToday"
-            android:textAlignment="center"
-            android:textColor="@color/colorTextPrimary"
-            android:textSize="@dimen/small_text_size"
-            tools:text="September 29\nToday" />
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/period_date_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/small_text_size"
+                tools:text="May 24" />
+
+            <TextView
+                android:id="@+id/today_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextPrimary"
+                android:textStyle="italic"
+                tools:text="Today" />
+        </LinearLayout>
 
         <Button
             android:id="@+id/nextBtn"

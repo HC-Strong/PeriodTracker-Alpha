@@ -1,17 +1,19 @@
 package com.example.periodtracker.adapters
 
 import android.content.Context
+import android.nfc.Tag
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
+import androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior.setTag
 import com.example.periodtracker.R
 import com.example.periodtracker.model.DailyInfo
 import java.time.LocalDate
 
-class CalendarAdapter( private val context: Context, private val displayDates : List<LocalDate>, val lookupDates: List<DailyInfo>) : BaseAdapter() {
+class CalendarAdapter( private val context: Context, private val displayDates : List<LocalDate>, private val gridDateTags : List<String>, val lookupDates: List<DailyInfo>) : BaseAdapter() {
     //val events = CalendarEventList.events
 
     override fun getView(position: Int, convertViewVal: View?, parent: ViewGroup?): View {
@@ -40,14 +42,14 @@ class CalendarAdapter( private val context: Context, private val displayDates : 
         }
 
         holder.dateText!!.text = this.displayDates[position].dayOfMonth.toString()
+        holder.dateText!!.setTag(R.id.hidden_date_info_tag_id, this.gridDateTags[position])
 
-        ////////////// MAKE ADDITIONAL CHANGES TO SPECIFIC ASPECTS OF GRID VIEWS BY UNCOMMMENTING THE FOLLOWING/////
+        ////////////// MAKE ADDITIONAL CHANGES TO SPECIFIC ASPECTS OF GRID VIEWS BY UNCOMMENTING THE FOLLOWING/////
 /*        if (this.dates[position].dayOfMonth > 4) {
             holder.dateText!!.setTextColor(Color.parseColor("#bdbdbd"))                       // set text color only
             holder.dateText!!.setBackgroundColor(getColor(context, R.color.colorPrimaryDark)) // set bg color
             //holder.dateText!!.setBackgroundResource((R.drawable.dark_shape))                  // set bg drawable
         }*/
-        Log.d("TAG", "1")
         return  convertView
     }
 

@@ -8,8 +8,10 @@
         android:id="@+id/calendarDateTxtView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="logPeriodDialog"
         android:textAlignment="center"
         android:textColor="@color/colorTextPrimary"
         android:textSize="@dimen/calendar_date_text_size"
-        tools:text="22" />
+        tools:text="22"
+        android:tag="082019"/>
 </LinearLayout>

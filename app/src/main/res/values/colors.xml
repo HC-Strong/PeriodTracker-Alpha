@@ -3,7 +3,8 @@
     <color name="colorPrimary">#474747</color>
     <color name="colorPrimaryDark">#323232</color>
     <color name="colorAccent">#C21200</color>
-    <color name="bloodRed">#C21200</color>
+    <color name="periodColor">#C21200</color>
+    <color name="symptomColor">#0037FF</color>
 
     <color name="colorTextPrimary">#FFFFFF</color>
     <color name="colorTextFaded">#A7A7A7</color>

@@ -8,6 +8,7 @@
         android:id="@+id/calendarDateTxtView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="logPeriodDialog"
         android:textAlignment="center"
         android:textColor="@color/colorTextFaded"
         android:textSize="18sp"

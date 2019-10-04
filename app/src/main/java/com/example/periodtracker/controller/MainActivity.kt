@@ -12,7 +12,10 @@ import com.example.periodtracker.adapters.CalendarUpdate
 import com.example.periodtracker.dialogs.AddPeriodDialogFragment
 import com.example.periodtracker.model.Cycle
 import com.example.periodtracker.services.PeriodData
+import com.example.periodtracker.utilities.BUNDLE_DIALOG
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_testing.view.*
+import kotlinx.android.synthetic.main.calendar_dates_default.view.*
 import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.LocalDate.now
@@ -66,7 +69,21 @@ class MainActivity : AppCompatActivity() {
     fun logPeriodDialog(view: View) {
         Log.d("IGNORE", "Logging view to curb warnings: $view")
 
+        val logPeriodBundle = Bundle()
+        lateinit var dateString : String
+
+        // Any date view will have that calendarDateTxtView in it to work with, but the FAB won't
+        if ( view.calendarDateTxtView != null ) {
+            dateString = "${view.getTag(R.id.hidden_date_info_tag_id).toString()} ${view.calendarDateTxtView.text.toString()}"
+        } else {
+            dateString = now().month.toString()+" "+ now().dayOfMonth.toString()
+        }
+
+
+        logPeriodBundle.putString(BUNDLE_DIALOG, dateString)
+
         val newFragment = AddPeriodDialogFragment()
+        newFragment.arguments = logPeriodBundle
         newFragment.show(supportFragmentManager, "add period")
     }
 }

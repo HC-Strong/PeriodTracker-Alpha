@@ -11,6 +11,7 @@ class CalendarUpdate {
     fun updateCalendar(context: Context, gridView: GridView, refDate: LocalDate) {
 
         val gridDates = mutableListOf<LocalDate>()
+        val gridTags = mutableListOf<String>()
 
         val startOffset = LocalDate.of(refDate.year, refDate.month, 1).dayOfWeek.value-1
         Log.d("TAG", "start day of week is $startOffset")
@@ -25,6 +26,7 @@ class CalendarUpdate {
         if(startOffset > 0) {
             for (i in daysInPrevMonth-startOffset+1..daysInPrevMonth) {
                 gridDates.add(LocalDate.of(prevMonth.year, prevMonth.month, i))
+                gridTags.add(prevMonth.month.toString())
             }
         }
 
@@ -32,6 +34,7 @@ class CalendarUpdate {
         var j = 1
         while (j <= daysInMonth) {
             gridDates.add(LocalDate.of(refDate.year, refDate.month, j))
+            gridTags.add(refDate.month.toString())
             j++
         }
 
@@ -44,6 +47,7 @@ class CalendarUpdate {
             val daysToFill = 7 - daysOnLastRow
             for (k in 1..daysToFill) {
                 gridDates.add(LocalDate.of(nextMonth.year, nextMonth.month, k))
+                gridTags.add(nextMonth.month.toString())
             }
         } else {
             Log.d("TAG", "No need to fill in next month dates")
@@ -58,7 +62,7 @@ class CalendarUpdate {
 
 
         // set gridView Adapter
-        val adapter = CalendarAdapter(context, gridDates, PeriodData.periodRecords)
+        val adapter = CalendarAdapter(context, gridDates,gridTags, PeriodData.periodRecords)
         gridView.adapter = adapter
     }
 }
