@@ -11,6 +11,7 @@ import com.example.periodtracker.R
 import com.example.periodtracker.utilities.BUNDLE_DIALOG
 import kotlinx.android.synthetic.main.add_period_dialog.*
 import kotlinx.android.synthetic.main.add_period_dialog.view.*
+import java.time.LocalDate
 
 class AddPeriodDialogFragment : DialogFragment() {
 
@@ -20,7 +21,8 @@ class AddPeriodDialogFragment : DialogFragment() {
             // Get the layout inflater
             val inflater = requireActivity().layoutInflater
 
-            val selectedDate = arguments!!.getString(BUNDLE_DIALOG)
+            val selectedDateStr = arguments!!.getString(BUNDLE_DIALOG)
+            val selectedDate = LocalDate.parse(selectedDateStr)
 
             Log.d("TAG", "The selected date is $selectedDate")
 
@@ -42,7 +44,7 @@ class AddPeriodDialogFragment : DialogFragment() {
                     })
 
             // Set text for popup to currently selected date
-            content.period_date_text.text = selectedDate
+            content.period_date_text.text = "${selectedDate.month.toString()}  ${selectedDate.dayOfMonth.toString()}"
             builder.create()
         } ?: throw IllegalStateException("Activity cannot be null")
 

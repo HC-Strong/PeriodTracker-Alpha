@@ -38,7 +38,6 @@ class MainActivity : AppCompatActivity() {
 
         CalendarUpdate().updateCalendar(this, calendar_grid, now())
 
-
     }
 
 
@@ -66,21 +65,26 @@ class MainActivity : AppCompatActivity() {
         Log.d("TAG", PeriodData.cycleRecords.toString())
     }
 
+
+
     fun logPeriodDialog(view: View) {
         Log.d("IGNORE", "Logging view to curb warnings: $view")
 
         val logPeriodBundle = Bundle()
-        lateinit var dateString : String
+        //lateinit var dateString : String
+        lateinit var selectedDate : String // not how I wanted to store this, but passing it around as anything else was proving difficult
 
         // Any date view will have that calendarDateTxtView in it to work with, but the FAB won't
         if ( view.calendarDateTxtView != null ) {
-            dateString = "${view.getTag(R.id.hidden_date_info_tag_id).toString()} ${view.calendarDateTxtView.text.toString()}"
+            //dateString = "${view.getTag(R.id.hidden_date_info_tag_id).toString()} ${view.calendarDateTxtView.text.toString()}"
+            selectedDate = view.getTag(R.id.hidden_date_info_tag_id).toString()
         } else {
-            dateString = now().month.toString()+" "+ now().dayOfMonth.toString()
+            //dateString = now().month.toString()+" "+ now().dayOfMonth.toString()
+            selectedDate = now().toString()
         }
 
 
-        logPeriodBundle.putString(BUNDLE_DIALOG, dateString)
+        logPeriodBundle.putString(BUNDLE_DIALOG, selectedDate)
 
         val newFragment = AddPeriodDialogFragment()
         newFragment.arguments = logPeriodBundle

@@ -13,7 +13,7 @@ import com.example.periodtracker.R
 import com.example.periodtracker.model.DailyInfo
 import java.time.LocalDate
 
-class CalendarAdapter( private val context: Context, private val displayDates : List<LocalDate>, private val gridDateTags : List<String>, val lookupDates: List<DailyInfo>) : BaseAdapter() {
+class CalendarAdapter( private val context: Context, private val displayDates : List<LocalDate>, val lookupDates: List<DailyInfo>) : BaseAdapter() {
     //val events = CalendarEventList.events
 
     override fun getView(position: Int, convertViewVal: View?, parent: ViewGroup?): View {
@@ -42,7 +42,7 @@ class CalendarAdapter( private val context: Context, private val displayDates : 
         }
 
         holder.dateText!!.text = this.displayDates[position].dayOfMonth.toString()
-        holder.dateText!!.setTag(R.id.hidden_date_info_tag_id, this.gridDateTags[position])
+        holder.dateText!!.setTag(R.id.hidden_date_info_tag_id, this.displayDates[position].toString())
 
         ////////////// MAKE ADDITIONAL CHANGES TO SPECIFIC ASPECTS OF GRID VIEWS BY UNCOMMENTING THE FOLLOWING/////
 /*        if (this.dates[position].dayOfMonth > 4) {
